@@ -1,0 +1,17 @@
+<div>
+    <span class="mat-rdp-label">
+        <label>{{prefixLabel}}</label>
+        <label class="mat-rdp-selected-label">{{selectedDate | date:dateFormat}}</label>
+    </span>
+    <mat-calendar
+        [startAt]="selectedDate"
+        [selected]="selectedDate"
+        [minDate]="minDate"
+        [maxDate]="maxDate"
+        (selectedChange)="onSelectedChange($event)"
+        (yearSelected)="onYearSelected($event)"
+        (_userSelection)="onUserSelection($event)"
+        [dateFilter]="weekendFilter"
+    >
+    </mat-calendar>
+</div>

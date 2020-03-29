@@ -1,0 +1,11 @@
+<div class="main">
+    <button (click)="reset()">Reset Dates</button>
+    <h3>
+        Selected date from: {{range.fromDate|date}} to: {{range.toDate|date}}
+    </h3>
+    <mat-rdp
+        (selectedDateRangeChanged)="updateRange($event)"
+        [options]="options"
+        #pickerOne
+    ></mat-rdp>
+</div>

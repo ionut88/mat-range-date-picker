@@ -1,0 +1,52 @@
+<div
+    [@transformPickerOverlay]="shouldAnimate"
+    class="mat-rdp-calendar-container"
+>
+    <div class="mat-rdp-calendar-item">
+        <calendar
+            [prefixLabel]="configStoreService?.options?.startDatePrefix"
+            [selectedDate]="fromDate"
+            [minDate]="fromMinDate"
+            [maxDate]="fromMaxDate"
+            (selectedDateChange)="updateFromDate($event)"
+        >
+        </calendar>
+    </div>
+    <div class="mat-rdp-calendar-item">
+        <calendar
+            [prefixLabel]="configStoreService?.options?.endDatePrefix"
+            [selectedDate]="toDate"
+            [minDate]="toMinDate"
+            [maxDate]="toMaxDate"
+            (selectedDateChange)="updateToDate($event)"
+        >
+        </calendar>
+    </div>
+    <div class="mat-rdp-calendar-item">
+        <div class="mat-rdp-menu">
+            <ul class="mat-rdp-presets-list">
+                <li
+                    *ngFor="let preset of configStoreService?.options?.presets"
+                    (click)="updateRangeByPreset(preset)"
+                >
+                    {{preset.presetLabel}}
+                </li>
+            </ul>
+            <div class="mat-rdp-controls">
+                <button
+                    mat-button
+                    color="primary"
+                    (click)="applyNewDates($event)"
+                >
+                    {{configStoreService?.options?.applyLabel}}
+                </button>
+                <button
+                    mat-button
+                    (click)="discardNewDates($event)"
+                >
+                    {{configStoreService?.options?.cancelLabel}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
