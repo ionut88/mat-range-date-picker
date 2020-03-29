@@ -1,15 +1,15 @@
 {
-  "name": "mat-range-date-picker",
+  "name": "mat-pick-range-date",
   "version": "0.0.1",
   "description": "Angular 2 component range date picker.",
-  "homepage": "https://github.com/ionut88/mat-range-date-picker",
+  "homepage": "https://github.com/ionut88/mat-pick-range-date",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionut88/mat-range-date-picker.git"
+    "url": "https://github.com/ionut88/mat-pick-range-date.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionut88/mat-range-date-picker/issues"
+    "url": "https://github.com/ionut88/mat-pick-range-date/issues"
   },
   "keywords": [
     "angular",
@@ -18,7 +18,7 @@
     "angular-material",
     "datepicker",
     "daterange-picker",
-    "mat-range-date-picker"
+    "mat-pick-range-date"
   ],
   "scripts": {
     "ng": "ng",
