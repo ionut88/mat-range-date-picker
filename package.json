@@ -1,5 +1,5 @@
 {
-  "name": "mat-pick-range-date",
+  "name": "mat-pick-range-dates",
   "version": "0.0.1",
   "description": "Angular 2 component range date picker.",
   "homepage": "https://github.com/ionut88/mat-pick-range-date",
@@ -28,9 +28,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "packagr": "rimraf dist && ng-packagr -p ng-package.json",
-    "gh-build": "ng build --prod --output-path docs --base-href"
+    "gh-build": "ng build --prod --output-path dist --base-href",
+    "publish": "rimraf dist && ng-packagr -p ng-package.json && npm publish dist"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.0",
     "@angular/cdk": "^9.2.0",
