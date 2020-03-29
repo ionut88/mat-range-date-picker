@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mat-range-date-picker": {
+    "mat-pick-range-date": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mat-range-date-picker",
+            "outputPath": "dist/mat-pick-range-date",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mat-range-date-picker:build"
+            "browserTarget": "mat-pick-range-date:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mat-range-date-picker:build:production"
+              "browserTarget": "mat-pick-range-date:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mat-range-date-picker:build"
+            "browserTarget": "mat-pick-range-date:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mat-range-date-picker:serve"
+            "devServerTarget": "mat-pick-range-date:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mat-range-date-picker:serve:production"
+              "devServerTarget": "mat-pick-range-date:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "mat-range-date-picker"
+  "defaultProject": "mat-pick-range-date"
 }
