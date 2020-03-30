@@ -1,6 +1,6 @@
 # MatRangeDatePicker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.3
 
 ## Run locally
 
@@ -19,9 +19,9 @@ Please note and install the following peer dependencies necessary for Angular v8
 
 ```json
 "peerDependencies": {
-    "@angular/animations": "^9.1",
-    "@angular/cdk": "^9.2",
-    "@angular/material": "^9.2"
+    "@angular/animations": "^8.2.14",
+    "@angular/cdk": "^8.2.3",
+    "@angular/material": "^8.2.3"
   }
 ```
 
