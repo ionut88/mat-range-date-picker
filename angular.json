@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mat-pick-range-date": {
+    "mat-pick-range-dates": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mat-pick-range-date",
+            "outputPath": "dist/mat-pick-range-dates",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mat-pick-range-date:build"
+            "browserTarget": "mat-pick-range-dates:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mat-pick-range-date:build:production"
+              "browserTarget": "mat-pick-range-dates:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mat-pick-range-date:build"
+            "browserTarget": "mat-pick-range-dates:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mat-pick-range-date:serve"
+            "devServerTarget": "mat-pick-range-dates:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mat-pick-range-date:serve:production"
+              "devServerTarget": "mat-pick-range-dates:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "mat-pick-range-date"
+  "defaultProject": "mat-pick-range-dates"
 }

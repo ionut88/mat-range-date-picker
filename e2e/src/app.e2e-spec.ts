@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('mat-pick-range-date app is running!');
+    expect(page.getTitleText()).toEqual('mat-pick-range-dates app is running!');
   });
 
   afterEach(async () => {

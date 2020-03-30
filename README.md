@@ -9,7 +9,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Install
 
 ```
-$ npm install mat-pick-range-date
+$ npm install mat-pick-range-dates
 ```
 
 ## Peer Dependencies
