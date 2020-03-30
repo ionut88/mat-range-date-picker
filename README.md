@@ -2,19 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
-## Development server
+## Run locally
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm i && ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Install
 
 ```
 $ npm install mat-pick-range-dates
+import MatRdpModule
 ```
 
 ## Peer Dependencies
 
-Please note and install the following peer dependencies necessary for Angular v6
+Please note and install the following peer dependencies necessary for Angular v8
 
 ```json
 "peerDependencies": {
