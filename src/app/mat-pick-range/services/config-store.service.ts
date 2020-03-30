@@ -9,6 +9,7 @@ export class ConfigStoreService {
     endDatePrefix: 'TO:',
     applyLabel: 'Apply',
     cancelLabel: 'Cancel',
+    placeholder: 'Choose a date',
     excludeWeekends: false,
     animation: true,
     locale: 'en-US',

@@ -6,9 +6,9 @@ import { takeWhile } from 'rxjs/operators';
 import { PickerOverlayComponent } from '../picker-overlay/picker-overlay.component';
 
 const DEFAULT_CONFIG: CalendarOverlayConfig = {
-  panelClass: 'ngx-mat-drp-overlay',
+  panelClass: 'mat-prd-overlay',
   hasBackdrop: true,
-  backdropClass: 'ngx-mat-drp-overlay-backdrop',
+  backdropClass: 'mat-prd-overlay-backdrop',
   shouldCloseOnBackdropClick: true
 };
 

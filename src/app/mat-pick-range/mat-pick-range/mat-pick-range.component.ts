@@ -37,7 +37,6 @@ export class MatPickRangeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.configStoreService.options = this.options;
-    this.options.placeholder = this.options.placeholder || 'Choose a date';
     this.rangeUpdate$ = this.rangeStoreService.rangeUpdate$.subscribe(range => {
       const from: string = this.formatToDateString(
         range.fromDate,

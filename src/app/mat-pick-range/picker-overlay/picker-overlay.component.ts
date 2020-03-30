@@ -6,7 +6,7 @@ import { ConfigStoreService } from '../services/config-store.service';
 import { pickerOverlayAnimations } from './picker-overlay.animations';
 
 @Component({
-  selector: 'ngx-mat-drp-picker-overlay',
+  selector: 'picker-overlay',
   templateUrl: './picker-overlay.component.html',
   styleUrls: ['./picker-overlay.component.scss'],
   animations: [pickerOverlayAnimations.transformPanel],

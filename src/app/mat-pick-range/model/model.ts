@@ -28,6 +28,7 @@ export interface Options {
   animation?: boolean;
   calendarOverlayConfig?: CalendarOverlayConfig;
   placeholder?: string;
+  matLabel?: string;
   startDatePrefix?: string;
   endDatePrefix?: string;
 }

@@ -1,5 +1,6 @@
 <div>
     <mat-form-field class="mat-prd-display">
+        <mat-label *ngIf="options?.matLabel">{{options.matLabel}}</mat-label>
         <input
             class="mat-prd-input"
             matInput
