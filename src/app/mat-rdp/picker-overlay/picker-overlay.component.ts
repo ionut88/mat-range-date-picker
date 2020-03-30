@@ -30,7 +30,13 @@ export class PickerOverlayComponent implements OnInit {
 
   ngOnInit() {
     this.fromDate = this.rangeStoreService.fromDate;
+    if (this.fromDate) {
+      this.toMinDate = this.fromDate;
+    }
     this.toDate = this.rangeStoreService.toDate;
+    if (this.toDate) {
+      this.toMinDate = this.toDate;
+    }
     this.shouldAnimate = this.configStoreService.options.animation
       ? 'enter'
       : 'noop';
