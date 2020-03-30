@@ -3,9 +3,9 @@
     <h3>
         Selected date from: {{range.fromDate|date}} to: {{range.toDate|date}}
     </h3>
-    <mat-rdp
+    <mat-pick-range
         (selectedDateRangeChanged)="updateRange($event)"
         [options]="options"
         #pickerOne
-    ></mat-rdp>
+    ></mat-pick-range>
 </div>

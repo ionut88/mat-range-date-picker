@@ -1,9 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-  Range,
-  RdpOptions,
-  PresetItem
-} from './mat-rdp/model/model';
+import { Range, Options, PresetItem } from './mat-pick-range/model/model';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +8,7 @@ import {
 })
 export class AppComponent implements OnInit {
   range: Range = { fromDate: new Date(), toDate: new Date() };
-  options: RdpOptions;
+  options: Options;
   presets: Array<PresetItem> = [];
   @ViewChild('pickerOne', { static: false }) pickerOne;
 
@@ -28,8 +24,8 @@ export class AppComponent implements OnInit {
       presets: this.presets,
       format: 'mediumDate',
       range: { fromDate: today, toDate: today },
-      fromMinMax: {fromDate:fromMin, toDate:fromMax},
-      toMinMax: {fromDate:toMin, toDate:toMax},
+      fromMinMax: { fromDate: fromMin, toDate: fromMax },
+      toMinMax: { fromDate: toMin, toDate: toMax },
     };
   }
 

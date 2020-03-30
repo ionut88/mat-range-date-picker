@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatRdpComponent } from './mat-rdp/mat-rdp.component';
+import { MatPickRangeComponent } from './mat-pick-range/mat-pick-range.component';
 import { PickerOverlayComponent } from './picker-overlay/picker-overlay.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,7 +17,7 @@ import { DATE } from './services/range-store.service';
 
 @NgModule({
   declarations: [
-    MatRdpComponent,
+    MatPickRangeComponent,
     CalendarComponent,
     PickerOverlayComponent,
   ],
@@ -32,9 +32,9 @@ import { DATE } from './services/range-store.service';
     OverlayModule
   ],
   providers: [
-    {provide: DATE, useValue: new Date()}
+    { provide: DATE, useValue: new Date() }
   ],
   entryComponents: [PickerOverlayComponent],
-  exports: [MatRdpComponent]
+  exports: [MatPickRangeComponent]
 })
-export class MatRdpModule { }
+export class MatPickRangeModule { }

@@ -1,8 +1,8 @@
 <div
     [@transformPickerOverlay]="shouldAnimate"
-    class="mat-rdp-calendar-container"
+    class="mat-prd-calendar-container"
 >
-    <div class="mat-rdp-calendar-item">
+    <div class="mat-prd-calendar-item">
         <calendar
             [prefixLabel]="configStoreService?.options?.startDatePrefix"
             [selectedDate]="fromDate"
@@ -12,7 +12,7 @@
         >
         </calendar>
     </div>
-    <div class="mat-rdp-calendar-item">
+    <div class="mat-prd-calendar-item">
         <calendar
             [prefixLabel]="configStoreService?.options?.endDatePrefix"
             [selectedDate]="toDate"
@@ -22,9 +22,9 @@
         >
         </calendar>
     </div>
-    <div class="mat-rdp-calendar-item">
-        <div class="mat-rdp-menu">
-            <ul class="mat-rdp-presets-list">
+    <div class="mat-prd-calendar-item">
+        <div class="mat-prd-menu">
+            <ul class="mat-prd-presets-list">
                 <li
                     *ngFor="let preset of configStoreService?.options?.presets"
                     (click)="updateRangeByPreset(preset)"
@@ -32,7 +32,7 @@
                     {{preset.presetLabel}}
                 </li>
             </ul>
-            <div class="mat-rdp-controls">
+            <div class="mat-prd-controls">
                 <button
                     mat-button
                     color="primary"

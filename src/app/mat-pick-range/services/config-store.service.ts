@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { RdpOptions } from '../model/model';
+import { Options } from '../model/model';
 
 @Injectable()
 export class ConfigStoreService {
-  private _rdpOptions: RdpOptions;
+  private _rdpOptions: Options;
   private defaultOptions = {
     startDatePrefix: 'FROM:',
     endDatePrefix: 'TO:',
@@ -18,11 +18,11 @@ export class ConfigStoreService {
 
   constructor() {}
 
-  get options(): RdpOptions {
+  get options(): Options {
     return this._rdpOptions;
   }
 
-  set options(options: RdpOptions) {
+  set options(options: Options) {
     this._rdpOptions = { ...this.defaultOptions, ...options };
   }
 }

@@ -4,6 +4,7 @@
     "entryFile": "public_api.ts"
   },
   "whitelistedNonPeerDependencies": [
+    "@babel/compat-data",
     "angular",
     "core-js",
     "rxjs",

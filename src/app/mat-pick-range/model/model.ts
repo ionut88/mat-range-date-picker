@@ -15,7 +15,7 @@ export interface CalendarOverlayConfig {
   shouldCloseOnBackdropClick?: boolean;
 }
 
-export interface RdpOptions {
+export interface Options {
   presets: Array<PresetItem>;
   format: string;
   range: Range;

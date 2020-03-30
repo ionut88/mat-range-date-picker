@@ -1,0 +1,54 @@
+.mat-prd-calendar-container {
+    display: flex;
+    justify-content: space-around;
+    min-width: 650px;
+    height: 300px;
+
+    .mat-prd-calendar-item {
+        flex-basis: 33.33%;
+        min-width: 210px;
+        padding: 1em;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        .mat-prd-menu {
+            height: 100%;
+            .mat-prd-presets-list {
+                list-style-type: none;
+                margin: 0px;
+                padding: 0px;
+                li {
+                    margin: 5px 0 5px 0;
+                    padding: 4%;
+                    cursor: pointer;
+                    background: #fafafa;
+                    color: #3f51b5;
+                    user-select: none;
+                }
+
+                li:hover {
+                    background: #3f51b5;
+                    color: #fff;
+                }
+            }
+
+            .mat-prd-controls {
+                display: flex;
+                justify-content: space-around;
+                margin: 10% auto;
+            }
+        }
+    }
+
+    .mat-prd-overlay {
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+            0 3px 14px 2px rgba(0, 0, 0, 0.12);
+        background: white;
+        border-radius: 2px;
+    }
+
+    .mat-prd-overlay-backdrop {
+        background-color: rgba(0, 0, 0, 0.2);
+        opacity: 0.2;
+    }
+}

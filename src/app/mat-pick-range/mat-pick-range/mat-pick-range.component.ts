@@ -2,15 +2,15 @@ import { OverlayRef } from '@angular/cdk/overlay';
 import { DatePipe } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Range, RdpOptions } from '../model/model';
+import { Range, Options } from '../model/model';
 import { CalendarOverlayService } from '../services/calendar-overlay.service';
 import { ConfigStoreService } from '../services/config-store.service';
 import { RangeStoreService } from '../services/range-store.service';
 
 @Component({
-  selector: 'mat-rdp',
-  templateUrl: './mat-rdp.component.html',
-  styleUrls: ['./mat-rdp.component.scss'],
+  selector: 'mat-pick-range',
+  templateUrl: './mat-pick-range.component.html',
+  styleUrls: ['./mat-pick-range.component.scss'],
   providers: [
     CalendarOverlayService,
     RangeStoreService,
@@ -19,10 +19,10 @@ import { RangeStoreService } from '../services/range-store.service';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MatRdpComponent implements OnInit, OnDestroy {
+export class MatPickRangeComponent implements OnInit, OnDestroy {
   @ViewChild('calendarInput', { static: true }) calendarInput: ElementRef;
   @Output() readonly selectedDateRangeChanged: EventEmitter<Range> = new EventEmitter<Range>();
-  @Input() options: RdpOptions;
+  @Input() options: Options;
 
   private rangeUpdate$: Subscription;
   public selectedDateRange = '';

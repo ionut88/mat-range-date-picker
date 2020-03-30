@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { MatRdpModule } from './mat-rdp/mat-rdp.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPickRangeModule } from './mat-pick-range/mat-pick-range.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatRdpModule
+    MatPickRangeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

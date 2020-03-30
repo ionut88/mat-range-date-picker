@@ -1,8 +1,7 @@
 <div>
-
-    <mat-form-field class="mat-rdp-date-display">
+    <mat-form-field class="mat-prd-display">
         <input
-            class="mat-rdp-date-input"
+            class="mat-prd-input"
             matInput
             [placeholder]="options.placeholder"
             [value]="selectedDateRange"
@@ -13,10 +12,9 @@
         >
         <div
             matSuffix
-            class="mat-rdp-calendar"
+            class="mat-prd-calendar"
             (click)="openCalendar($event)"
         >
         </div>
     </mat-form-field>
-
 </div>
