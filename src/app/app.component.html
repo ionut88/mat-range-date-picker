@@ -1,11 +1,18 @@
 <div class="main">
     <button (click)="reset()">Reset Dates</button>
     <h3>
-        Selected date from: {{range.fromDate|date}} to: {{range.toDate|date}}
+        Selected date no options from: {{range1?.fromDate|date}} to: {{range1?.toDate|date}}
     </h3>
     <mat-pick-range
-        (selectedDateRangeChanged)="updateRange($event)"
+        (selectedDateRangeChanged)="updateRange1($event)"
+        #picker1
+    ></mat-pick-range>
+    <h3>
+        Selected date with options from: {{range2?.fromDate|date}} to: {{range2?.toDate|date}}
+    </h3>
+    <mat-pick-range
+        (selectedDateRangeChanged)="updateRange2($event)"
         [options]="options"
-        #picker
+        #picker2
     ></mat-pick-range>
 </div>

@@ -16,16 +16,15 @@ export interface CalendarOverlayConfig {
 }
 
 export interface Options {
-  presets: Array<PresetItem>;
-  format: string;
-  range: Range;
+  presets?: Array<PresetItem>;
+  format?: string;
+  range?: Range;
   excludeWeekends?: boolean;
   locale?: string;
   fromMinMax?: Range;
   toMinMax?: Range;
   applyLabel?: string;
   cancelLabel?: string;
-  animation?: boolean;
   calendarOverlayConfig?: CalendarOverlayConfig;
   placeholder?: string;
   matLabel?: string;

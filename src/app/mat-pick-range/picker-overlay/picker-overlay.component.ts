@@ -3,13 +3,11 @@ import { PresetItem } from '../model/model';
 import { RangeStoreService } from '../services/range-store.service';
 import { OverlayRef } from '@angular/cdk/overlay';
 import { ConfigStoreService } from '../services/config-store.service';
-import { pickerOverlayAnimations } from './picker-overlay.animations';
 
 @Component({
   selector: 'picker-overlay',
   templateUrl: './picker-overlay.component.html',
   styleUrls: ['./picker-overlay.component.scss'],
-  animations: [pickerOverlayAnimations.transformPanel],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -20,11 +18,10 @@ export class PickerOverlayComponent implements OnInit {
   fromMaxDate: Date;
   toMinDate: Date;
   toMaxDate: Date;
-  shouldAnimate: string;
 
   constructor(
     private rangeStoreService: RangeStoreService,
-    public configStoreService: ConfigStoreService,
+    public configService: ConfigStoreService,
     private overlayRef: OverlayRef
   ) { }
 
@@ -37,17 +34,14 @@ export class PickerOverlayComponent implements OnInit {
     if (this.toDate) {
       this.toMinDate = this.toDate;
     }
-    this.shouldAnimate = this.configStoreService.options.animation
-      ? 'enter'
-      : 'noop';
     ({
       fromDate: this.fromMinDate,
       toDate: this.fromMaxDate
-    } = this.configStoreService.options.fromMinMax);
+    } = this.configService.options.fromMinMax);
     ({
       fromDate: this.toMinDate,
       toDate: this.toMaxDate
-    } = this.configStoreService.options.toMinMax);
+    } = this.configService.options.toMinMax);
   }
 
   updateFromDate(date: Date) {

@@ -7,9 +7,11 @@ import { Options, Range } from './mat-pick-range/model/model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  range: Range = { fromDate: new Date(), toDate: new Date() };
+  public range1: Range = { fromDate: new Date(), toDate: new Date() };
+  public range2: Range = { fromDate: new Date(), toDate: new Date() };
   options: Options;
-  @ViewChild('picker', { static: false }) picker;
+  @ViewChild('picker1', { static: false }) picker1;
+  @ViewChild('picker2', { static: false }) picker2;
 
   ngOnInit() {
     const backDate = numOfDays => {
@@ -26,17 +28,21 @@ export class AppComponent implements OnInit {
         presetLabel: 'Last 30 Days',
         range: { fromDate: backDate(30), toDate: today }
       }],
-      format: 'mediumDate',
       range: { fromDate: backDate(1), toDate: today }
     };
   }
 
-  updateRange(range: Range) {
-    this.range = range;
+  updateRange1(range: Range) {
+    this.range1 = range;
+  }
+
+  updateRange2(range: Range) {
+    this.range2 = range;
   }
 
   reset() {
     const today = new Date();
-    this.picker.resetDates({ fromDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1), toDate: today });
+    this.picker1.resetDates({ fromDate: today, toDate: today });
+    this.picker2.resetDates({ fromDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1), toDate: today });
   }
 }

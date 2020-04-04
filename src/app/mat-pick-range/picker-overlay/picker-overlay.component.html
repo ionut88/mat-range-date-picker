@@ -1,10 +1,7 @@
-<div
-    [@transformPickerOverlay]="shouldAnimate"
-    class="mat-prd-calendar-container"
->
+<div class="mat-prd-calendar-container">
     <div class="mat-prd-calendar-item">
         <calendar
-            [prefixLabel]="configStoreService?.options?.startDatePrefix"
+            [prefixLabel]="configService?.options?.startDatePrefix"
             [selectedDate]="fromDate"
             [minDate]="fromMinDate"
             [maxDate]="fromMaxDate"
@@ -14,7 +11,7 @@
     </div>
     <div class="mat-prd-calendar-item">
         <calendar
-            [prefixLabel]="configStoreService?.options?.endDatePrefix"
+            [prefixLabel]="configService?.options?.endDatePrefix"
             [selectedDate]="toDate"
             [minDate]="toMinDate"
             [maxDate]="toMaxDate"
@@ -24,9 +21,12 @@
     </div>
     <div class="mat-prd-calendar-item">
         <div class="mat-prd-menu">
-            <ul class="mat-prd-presets-list">
+            <ul
+                class="mat-prd-presets-list"
+                *ngIf="configService?.options?.presets && configService?.options?.presets.length > 0"
+            >
                 <li
-                    *ngFor="let preset of configStoreService?.options?.presets"
+                    *ngFor="let preset of configService?.options?.presets"
                     (click)="updateRangeByPreset(preset)"
                 >
                     {{preset.presetLabel}}
@@ -38,13 +38,13 @@
                     color="primary"
                     (click)="applyNewDates($event)"
                 >
-                    {{configStoreService?.options?.applyLabel}}
+                    {{configService?.options?.applyLabel}}
                 </button>
                 <button
                     mat-button
                     (click)="discardNewDates($event)"
                 >
-                    {{configStoreService?.options?.cancelLabel}}
+                    {{configService?.options?.cancelLabel}}
                 </button>
             </div>
         </div>

@@ -4,20 +4,29 @@ import { Options } from '../model/model';
 @Injectable()
 export class ConfigStoreService {
   private _rdpOptions: Options;
-  private defaultOptions = {
+  private defaultOptions: Options = {
     startDatePrefix: 'FROM:',
     endDatePrefix: 'TO:',
     applyLabel: 'Apply',
     cancelLabel: 'Cancel',
     placeholder: 'Choose a date',
+    format: 'mediumDate',
     excludeWeekends: false,
-    animation: true,
     locale: 'en-US',
     fromMinMax: { fromDate: null, toDate: null },
-    toMinMax: { fromDate: null, toDate: null }
+    toMinMax: { fromDate: null, toDate: null },
+    range: { fromDate: new Date(), toDate: new Date() },
+    calendarOverlayConfig: {
+      panelClass: 'mat-prd-overlay',
+      hasBackdrop: true,
+      backdropClass: 'mat-prd-overlay-backdrop',
+      shouldCloseOnBackdropClick: true
+    }
   };
 
-  constructor() {}
+  constructor() { 
+    this._rdpOptions = this.defaultOptions;
+  }
 
   get options(): Options {
     return this._rdpOptions;

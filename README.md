@@ -1,4 +1,4 @@
-# MatRangeDatePicker
+# MatPickRangeModule
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.3
 
@@ -76,7 +76,6 @@ export class AppComponent implements OnInit {
         presetLabel: 'Last 30 Days',
         range: { fromDate: backDate(30), toDate: today }
       }],
-      format: 'mediumDate',
       range: { fromDate: backDate(1), toDate: today }
     };
   }
@@ -91,6 +90,32 @@ export class AppComponent implements OnInit {
   }
 }
 ```
+
+`defaultOptions`
+```typescript
+defaultOptions: Options = {
+    startDatePrefix: 'FROM:',
+    endDatePrefix: 'TO:',
+    applyLabel: 'Apply',
+    cancelLabel: 'Cancel',
+    placeholder: 'Choose a date',
+    format: 'mediumDate',
+    excludeWeekends: false,
+    locale: 'en-US',
+    fromMinMax: { fromDate: null, toDate: null },
+    toMinMax: { fromDate: null, toDate: null },
+    range: { fromDate: new Date(), toDate: new Date() },
+    calendarOverlayConfig: {
+      panelClass: 'mat-prd-overlay',
+      hasBackdrop: true,
+      backdropClass: 'mat-prd-overlay-backdrop',
+      shouldCloseOnBackdropClick: true
+    }
+}
+```
+
+## Issues
+Any issue will be solved weekly!
 
 ## Build
 

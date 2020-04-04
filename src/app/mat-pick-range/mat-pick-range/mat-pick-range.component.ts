@@ -10,7 +10,6 @@ import { RangeStoreService } from '../services/range-store.service';
 @Component({
   selector: 'mat-pick-range',
   templateUrl: './mat-pick-range.component.html',
-  styleUrls: ['./mat-pick-range.component.scss'],
   providers: [
     CalendarOverlayService,
     RangeStoreService,
@@ -31,36 +30,29 @@ export class MatPickRangeComponent implements OnInit, OnDestroy {
     private changeDetectionRef: ChangeDetectorRef,
     private calendarOverlayService: CalendarOverlayService,
     public rangeStoreService: RangeStoreService,
-    public configStoreService: ConfigStoreService,
+    public confStore: ConfigStoreService,
     private datePipe: DatePipe
   ) { }
 
   ngOnInit() {
-    this.configStoreService.options = this.options;
+    this.confStore.options = this.options;
     this.rangeUpdate$ = this.rangeStoreService.rangeUpdate$.subscribe(range => {
       const from: string = this.formatToDateString(
         range.fromDate,
-        this.options.format
+        this.confStore.options.format
       );
       const to: string = this.formatToDateString(
         range.toDate,
-        this.options.format
+        this.confStore.options.format
       );
       this.selectedDateRange = `${from} - ${to}`;
       this.selectedDateRangeChanged.emit(range);
     });
-
     this.rangeStoreService.updateRange(
-      this.options.range.fromDate,
-      this.options.range.toDate
+      this.confStore.options.range.fromDate,
+      this.confStore.options.range.toDate
     );
     this.changeDetectionRef.detectChanges();
-  }
-
-  ngOnDestroy() {
-    if (this.rangeUpdate$) {
-      this.rangeUpdate$.unsubscribe();
-    }
   }
 
   private formatToDateString(date: Date, format: string): string {
@@ -69,7 +61,7 @@ export class MatPickRangeComponent implements OnInit, OnDestroy {
 
   openCalendar(event) {
     const overlayRef: OverlayRef = this.calendarOverlayService.open(
-      this.options.calendarOverlayConfig,
+      this.confStore.options.calendarOverlayConfig,
       this.calendarInput
     );
   }
@@ -79,5 +71,11 @@ export class MatPickRangeComponent implements OnInit, OnDestroy {
       range.fromDate,
       range.toDate
     );
+  }
+
+  ngOnDestroy() {
+    if (this.rangeUpdate$) {
+      this.rangeUpdate$.unsubscribe();
+    }
   }
 }

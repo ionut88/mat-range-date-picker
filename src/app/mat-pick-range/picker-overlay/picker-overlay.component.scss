@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     min-width: 650px;
-    height: 300px;
+    height: 310px;
     background-color: white;
 
     .mat-prd-calendar-item {
@@ -20,6 +20,8 @@
                 list-style-type: none;
                 margin: 0px;
                 padding: 0px;
+                overflow-y: auto;
+                max-height: 85%;
 
                 li {
                     margin: 5px 0 5px 0;
@@ -39,7 +41,7 @@
             .mat-prd-controls {
                 display: flex;
                 justify-content: space-around;
-                margin: 10% auto;
+                margin: 5% auto;
             }
         }
     }
