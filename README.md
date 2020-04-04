@@ -6,6 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `npm i && ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Demo
+
+https://ionut88.github.io/mat-pick-range-dates/
+
+![mat-pick-range-dates.PNG](https://raw.githubusercontent.com/ionut88/mat-pick-range-dates/master/src/assets/img/mat-pick-range-dates.PNG)
+
+
 ## Install
 
 ```
@@ -46,6 +53,8 @@ export class AppModule { }
 <mat-pick-range (selectedDateRangeChanged)="updateRange($event)" [options]="options" #picker></mat-pick-range>
 ```
 
+Options are not required and will use defauls!
+
 `app.component.ts`
 ```typescript
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -62,21 +71,41 @@ export class AppComponent implements OnInit {
   @ViewChild('picker', { static: false }) picker;
 
   ngOnInit() {
-    const backDate = numOfDays => {
+    const addDays = numOfDays => {
       const today = new Date();
-      return new Date(today.setDate(today.getDate() - numOfDays));
+      return new Date(today.setDate(today.getDate() + numOfDays));
     };
     const today = new Date();
     this.options = {
       presets: [{
         presetLabel: 'Last 7 Days',
-        range: { fromDate: backDate(7), toDate: today }
+        range: { fromDate: addDays(-7), toDate: today }
       },
       {
         presetLabel: 'Last 30 Days',
-        range: { fromDate: backDate(30), toDate: today }
+        range: { fromDate: addDays(-30), toDate: today }
+      },
+      {
+        presetLabel: 'Last 45 Days',
+        range: { fromDate: addDays(-45), toDate: today }
       }],
-      range: { fromDate: backDate(1), toDate: today }
+      format: 'mediumDate',
+      range: { fromDate: addDays(-1), toDate: today },
+      excludeWeekends: true,
+      locale: 'en-US',
+      fromMinMax: { fromDate: addDays(-45), toDate: addDays(5) },
+      toMinMax: { fromDate: addDays(-45), toDate: addDays(5) },
+      applyLabel: 'Apply',
+      cancelLabel: 'Cancel',
+      calendarOverlayConfig: {
+        panelClass: 'mat-prd-overlay',
+        hasBackdrop: true,
+        backdropClass: 'mat-prd-overlay-backdrop',
+        shouldCloseOnBackdropClick: true
+      },
+      placeholder: 'Choose a date',
+      startDatePrefix: 'FROM:',
+      endDatePrefix: 'TO:',
     };
   }
 

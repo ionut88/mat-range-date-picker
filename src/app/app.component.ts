@@ -14,21 +14,41 @@ export class AppComponent implements OnInit {
   @ViewChild('picker2', { static: false }) picker2;
 
   ngOnInit() {
-    const backDate = numOfDays => {
+    const addDays = numOfDays => {
       const today = new Date();
-      return new Date(today.setDate(today.getDate() - numOfDays));
+      return new Date(today.setDate(today.getDate() + numOfDays));
     };
     const today = new Date();
     this.options = {
       presets: [{
         presetLabel: 'Last 7 Days',
-        range: { fromDate: backDate(7), toDate: today }
+        range: { fromDate: addDays(-7), toDate: today }
       },
       {
         presetLabel: 'Last 30 Days',
-        range: { fromDate: backDate(30), toDate: today }
+        range: { fromDate: addDays(-30), toDate: today }
+      },
+      {
+        presetLabel: 'Last 45 Days',
+        range: { fromDate: addDays(-45), toDate: today }
       }],
-      range: { fromDate: backDate(1), toDate: today }
+      format: 'mediumDate',
+      range: { fromDate: addDays(-1), toDate: today },
+      excludeWeekends: true,
+      locale: 'en-US',
+      fromMinMax: { fromDate: addDays(-45), toDate: addDays(5) },
+      toMinMax: { fromDate: addDays(-45), toDate: addDays(5) },
+      applyLabel: 'Apply',
+      cancelLabel: 'Cancel',
+      calendarOverlayConfig: {
+        panelClass: 'mat-prd-overlay',
+        hasBackdrop: true,
+        backdropClass: 'mat-prd-overlay-backdrop',
+        shouldCloseOnBackdropClick: true
+      },
+      placeholder: 'Choose a date',
+      startDatePrefix: 'FROM:',
+      endDatePrefix: 'TO:',
     };
   }
 
