@@ -17,7 +17,6 @@ https://ionut88.github.io/mat-pick-range-dates/
 
 ```
 $ npm install mat-pick-range-dates
-
 ```
 
 ## Peer Dependencies
