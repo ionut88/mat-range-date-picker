@@ -1,47 +1,53 @@
 .mat-prd-calendar-container {
-    display: flex;
     justify-content: space-around;
-    min-width: 650px;
-    height: 310px;
+    min-width: 450px;
     background-color: white;
 
-    .mat-prd-calendar-item {
-        flex-basis: 33.33%;
-        min-width: 210px;
-        padding: 1em;
-        font-family: Roboto, "Helvetica Neue", sans-serif;
-        font-size: 14px;
-        font-weight: 400;
+    .mat-prd-controls {
+        button {
+            margin: 1% 4%;
+            justify-content: space-around;
+            float: right;
+        }
+    }
+    .mat-prd-calendar-items {
+        display: flex;
 
-        .mat-prd-menu {
-            height: 100%;
+        .mat-prd-calendar-item {
+            flex-basis: 33.33%;
+            min-width: 210px;
+            padding: 1em;
+            font-family: Roboto, "Helvetica Neue", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 7%;
 
-            .mat-prd-presets-list {
-                list-style-type: none;
-                margin: 0px;
-                padding: 0px;
-                overflow-y: auto;
-                max-height: 85%;
+            .mat-prd-menu {
+                height: 86%;
+                position: absolute;
+                min-width: 30%;
+                
+                .mat-prd-presets-list {
+                    list-style-type: none;
+                    margin: 0px;
+                    padding: 0px;
+                    overflow-y: auto;
+                    max-height: 86%;
+                    position: relative;
+                    li {
+                        margin: 5px 0 5px 0;
+                        padding: 4%;
+                        cursor: pointer;
+                        background: #fafafa;
+                        color: #3f51b5;
+                        user-select: none;
+                    }
 
-                li {
-                    margin: 5px 0 5px 0;
-                    padding: 4%;
-                    cursor: pointer;
-                    background: #fafafa;
-                    color: #3f51b5;
-                    user-select: none;
+                    li:hover {
+                        background: #3f51b5;
+                        color: #fff;
+                    }
                 }
-
-                li:hover {
-                    background: #3f51b5;
-                    color: #fff;
-                }
-            }
-
-            .mat-prd-controls {
-                display: flex;
-                justify-content: space-around;
-                margin: 5% auto;
             }
         }
     }

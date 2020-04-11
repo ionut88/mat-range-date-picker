@@ -5,8 +5,6 @@ import { Options } from '../model/model';
 export class ConfigStoreService {
   private _rdpOptions: Options;
   private defaultOptions: Options = {
-    startDatePrefix: 'FROM:',
-    endDatePrefix: 'TO:',
     applyLabel: 'Apply',
     cancelLabel: 'Cancel',
     placeholder: 'Choose a date',

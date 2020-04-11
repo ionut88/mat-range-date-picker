@@ -1,7 +1,7 @@
 <div>
     <span
         class="mat-prd-label"
-        *ngIf="selectedDate"
+        *ngIf="selectedDate && prefixLabel"
     >
         <label>{{prefixLabel}}</label>
         <label class="mat-prd-selected-label">{{selectedDate | date:dateFormat}}</label>
