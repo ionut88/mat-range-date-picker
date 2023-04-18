@@ -1,6 +1,6 @@
 # MatPickRangeModule
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.3 & npm 10.9.0
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4 & npm 18.15.0
 
 ## Run locally
 
@@ -26,13 +26,12 @@ $ npm install mat-pick-range-dates
 
 ## Peer Dependencies
 
-Please note and install the following peer dependencies necessary for Angular v8
+Please note and install the following peer dependencies necessary for Angular v15
 
 ```json
 "peerDependencies": {
-  "@angular/animations": "^8.2.14",
-  "@angular/cdk": "^8.2.3",
-  "@angular/material": "^8.2.3"
+  "@angular/animations": "^15.2.0",
+  "@angular/material": "^15.2.7"
 }
 .css
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
@@ -45,7 +44,7 @@ Import `MatPickRangeModule` module in your application module.
 `app.module.ts`
 
 ```typescript
-import { MatPickRangeModule } from "ngx-mat-daterange-picker";
+import { MatPickRangeModule } from 'ngx-mat-daterange-picker';
 
 @NgModule({
   imports: [MatPickRangeModule],
@@ -56,11 +55,7 @@ export class AppModule {}
 `app.compnent.html`
 
 ```html
-<mat-pick-range
-  (selectedDateRangeChanged)="updateRange($event)"
-  [options]="options"
-  #picker
-></mat-pick-range>
+<mat-pick-range (selectedDateRangeChanged)="updateRange($event)" [options]="options" #picker></mat-pick-range>
 ```
 
 Options are not required and will use defauls!
@@ -68,18 +63,18 @@ Options are not required and will use defauls!
 `app.component.ts`
 
 ```typescript
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { Options, Range } from "./mat-pick-range/model/model";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Options, Range } from './mat-pick-range/model/model';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   range: Range = { fromDate: new Date(), toDate: new Date() };
   options: Options;
-  @ViewChild("picker", { static: false }) picker;
+  @ViewChild('picker', { static: false }) picker;
 
   ngOnInit() {
     const addDays = (numOfDays) => {
@@ -90,35 +85,35 @@ export class AppComponent implements OnInit {
     this.options = {
       presets: [
         {
-          presetLabel: "Last 7 Days",
+          presetLabel: 'Last 7 Days',
           range: { fromDate: addDays(-7), toDate: today },
         },
         {
-          presetLabel: "Last 30 Days",
+          presetLabel: 'Last 30 Days',
           range: { fromDate: addDays(-30), toDate: today },
         },
         {
-          presetLabel: "Last 45 Days",
+          presetLabel: 'Last 45 Days',
           range: { fromDate: addDays(-45), toDate: today },
         },
       ],
-      format: "mediumDate",
+      format: 'mediumDate',
       range: { fromDate: addDays(-1), toDate: today },
       excludeWeekends: true,
-      locale: "en-US",
+      locale: 'en-US',
       fromMinMax: { fromDate: addDays(-45), toDate: addDays(5) },
       toMinMax: { fromDate: addDays(-45), toDate: addDays(5) },
-      applyLabel: "Apply",
-      cancelLabel: "Cancel",
+      applyLabel: 'Apply',
+      cancelLabel: 'Cancel',
       calendarOverlayConfig: {
-        panelClass: "mat-prd-overlay",
+        panelClass: 'mat-prd-overlay',
         hasBackdrop: true,
-        backdropClass: "mat-prd-overlay-backdrop",
+        backdropClass: 'mat-prd-overlay-backdrop',
         shouldCloseOnBackdropClick: true,
       },
-      placeholder: "Choose a date",
-      startDatePrefix: "FROM:",
-      endDatePrefix: "TO:",
+      placeholder: 'Choose a date',
+      startDatePrefix: 'FROM:',
+      endDatePrefix: 'TO:',
     };
   }
 
@@ -129,11 +124,7 @@ export class AppComponent implements OnInit {
   reset() {
     const today = new Date();
     this.picker.resetDates({
-      fromDate: new Date(
-        today.getFullYear(),
-        today.getMonth(),
-        today.getDate() - 1
-      ),
+      fromDate: new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1),
       toDate: today,
     });
   }
@@ -144,19 +135,19 @@ export class AppComponent implements OnInit {
 
 ```typescript
 defaultOptions: Options = {
-  applyLabel: "Apply",
-  cancelLabel: "Cancel",
-  placeholder: "Choose a date",
-  format: "mediumDate",
+  applyLabel: 'Apply',
+  cancelLabel: 'Cancel',
+  placeholder: 'Choose a date',
+  format: 'mediumDate',
   excludeWeekends: false,
-  locale: "en-US",
+  locale: 'en-US',
   fromMinMax: { fromDate: null, toDate: null },
   toMinMax: { fromDate: null, toDate: null },
   range: { fromDate: new Date(), toDate: new Date() },
   calendarOverlayConfig: {
-    panelClass: "mat-prd-overlay",
+    panelClass: 'mat-prd-overlay',
     hasBackdrop: true,
-    backdropClass: "mat-prd-overlay-backdrop",
+    backdropClass: 'mat-prd-overlay-backdrop',
     shouldCloseOnBackdropClick: true,
   },
 };
