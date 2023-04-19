@@ -13,11 +13,11 @@ https://ionut88.github.io/mat-pick-range-dates/
 
 With default options
 
-![mat-pick-range-dates1.PNG](https://raw.githubusercontent.com/ionut88/mat-pick-range-dates/master/src/assets/img/mat-pick-range-dates1.PNG)
+![mat-pick-range-dates1.PNG](https://raw.githubusercontent.com/ionut88/mat-pick-range-dates/master/assets/img/mat-pick-range-dates1.PNG)
 
 With custom options
 
-![mat-pick-range-dates2.PNG](https://raw.githubusercontent.com/ionut88/mat-pick-range-dates/master/src/assets/img/mat-pick-range-dates2.PNG)
+![mat-pick-range-dates2.PNG](https://raw.githubusercontent.com/ionut88/mat-pick-range-dates/master/assets/img/mat-pick-range-dates2.PNG)
 
 ## Install
 
