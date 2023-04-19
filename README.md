@@ -156,9 +156,9 @@ defaultOptions: Options = {
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Run `npm run packagr` to build the library project. The build artifacts will be stored in the `dist/`.
+Run `npm run watch` to build the library project and watch it. The build artifacts will be stored in the `dist/`.
 
 ## License
 
