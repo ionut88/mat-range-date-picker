@@ -1,9 +1,10 @@
 {
   "name": "mat-pick-range-dates",
+  "version": "15.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build mat-pick-range-dates --configuration=production",
+    "build": "ng build mat-pick-range-dates --configuration production",
     "watch": "ng build mat-pick-range-dates --watch --configuration development",
     "test": "ng test",
     "publish": "rimraf dist && npm run build && npm publish --access public mat-pick-range-dates"
