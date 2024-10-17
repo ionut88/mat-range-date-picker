@@ -18,7 +18,6 @@ import { DATE } from './services/range-store.service';
   declarations: [MatPickRangeComponent, CalendarComponent, PickerOverlayComponent],
   imports: [CommonModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatInputModule, MatButtonModule, MatTooltipModule, OverlayModule],
   providers: [{ provide: DATE, useValue: new Date() }],
-  entryComponents: [PickerOverlayComponent],
   exports: [MatPickRangeComponent],
 })
 export class MatPickRangeModule {}
